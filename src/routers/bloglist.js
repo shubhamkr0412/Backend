@@ -45,6 +45,17 @@ router.post("/blogs",async(req,res)=>{
          res.status(500).send(e);
      }
   })
+  router.get("/blogs/title/:title",async(req,res)=>{
+    try{
+        
+        const getBlog1=await BlogList.find({title:req.params.title});
+  
+         res.send(getBlog1);
+ 
+    }catch(e){
+        res.status(500).send(e);
+    }
+ })
   router.delete("/blogs/:id",async(req,res)=>{
      try{
          const _id=req.params.id;
