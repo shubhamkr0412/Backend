@@ -4,6 +4,7 @@ const router= new express.Router();
 
 const BlogList=require("../models/blog");
 router.post("/blogs",async(req,res)=>{
+    console.log("request=",req.body);
     try{
         const addingNewblog=new BlogList(req.body);
         console.log(req.body);
